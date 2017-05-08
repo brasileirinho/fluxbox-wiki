@@ -65,34 +65,55 @@
                                                 <a id="gage"></a><a class="permalink" href="#gage"><span class="glyphicon glyphicon-link"></span></a>gage</h2>
                                             <p>Da die Datei ~/.fluxbox/apps nicht in einem laufenden Fluxbox bearbeitet werden sollte muss man Fluxbox beenden und sie in einem beliebigen Texteditor öffnen.
                                                 <a href="/fluxbox-wiki/de/wiki/Fluxbox-Menus/">testlink</a>
-                                                <a href="/fluxbox-wiki/en/wiki/Window-Decorations/Borderless-Windows/" ">borderless windows</a>
-Anschliessend fügt man folgende Zeilen ein:</p>
-<pre><code>  [app] (<span class="hljs-name ">.*</span>)
+                                                <a href="/fluxbox-wiki/en/wiki/Window-Decorations/Borderless-Windows/">borderless windows</a> Anschliessend fügt man folgende Zeilen ein:</p>
+                                            <pre><code>  [app] (<span class="hljs-name">.*</span>)
      [Deco]    {BORDER}
   [end]
 </code></pre>
-<p>Nach einem Neustart zeigt Fluxbox nur noch einen Rahmen um die Fenster an (wenn das gewählte Farbschema einen anzeigt) Farbe und Breite des Rahmens können angepasst werden,</p>
-<p>Entweder Global (unabhängig vom Farbschema) overlay file oder separat in jedem Farbschema.</p>
-<p>Folgende Zeilen passen den Rahmen an:</p>
-</section>
-<section>
-<h2><a id="hgage "></a><a class="permalink " href="#hgage "><span class="glyphicon glyphicon-link "></span></a>hgage</h2><p>window.borderWidth:<br>
-window.borderColor:   color (Bsp. #009900, black, rgb:00/64/00)</p>
-<p>Rahmen und externe Tabs anzeigen lassen</p>
-<p>Seit Fluxbox 1.0rc gibt es wieder externe Tabs (Reiter), ergo können diese zusätzlich zum Rahmen verwendet werden. Die Zeilen in der apps Datei sehen dazu wie folgt aus:</p>
-<pre><code>  [app] (<span class="hljs-name ">.*</span>)
+                                            <p>Nach einem Neustart zeigt Fluxbox nur noch einen Rahmen um die Fenster an (wenn das gewählte Farbschema einen anzeigt) Farbe und Breite des Rahmens können angepasst werden,</p>
+                                            <p>Entweder Global (unabhängig vom Farbschema) overlay file oder separat in jedem Farbschema.</p>
+                                            <p>Folgende Zeilen passen den Rahmen an:</p>
+                                        </section>
+                                        <section>
+                                            <h2>
+                                                <a id="hgage"></a><a class="permalink" href="#hgage"><span class="glyphicon glyphicon-link"></span></a>hgage</h2>
+                                            <p>window.borderWidth:<br> window.borderColor: color (Bsp. #009900, black, rgb:00/64/00)</p>
+                                            <p>Rahmen und externe Tabs anzeigen lassen</p>
+                                            <p>Seit Fluxbox 1.0rc gibt es wieder externe Tabs (Reiter), ergo können diese zusätzlich zum Rahmen verwendet werden. Die Zeilen in der apps Datei sehen dazu wie folgt aus:</p>
+                                            <pre><code>  [app] (<span class="hljs-name">.*</span>)
      [Deco]    {TAB}
   [end]
 </code></pre>
-<p>Dazu müssen allerdings die externen Tabs aktiviert werden, entweder über das Fluxbox-Menü oder in der init Datei.</p>
-</section>
-</section>
-</div></div></div><div class="sidebar sidebar-right col-md-3 "><ul id="spytoc " data-spy="affix " data-offset-bottom="120 " data-offset-top="38 " class="nav nav-pills nav-stacked "><li class="dropdown ">
-<a class="dropdown-toggle " href="#test ">test</a>
-<ul class="dropdown-menu "><li class=" ">
-<a class=" " href="#gage ">gage</a>
-</li><li class=" ">
-<a class=" " href="#hgage ">hgage</a>
-</li></ul></li></ul><button type="button " class="btn btn-sm btn-link "><span class="glyphicon glyphicon-eye-close "></span></button></div></div></div></div></div><div class="_3SLiHqGOHVbGK8BFZOY_3h footer ">fluxbox-wiki.org<a style="float:right;
-                                                    " href="https://github.com/sillyslux/fluxbox-wiki/blob/master/pages/WikiPages/Window-Decorations/de.md ">edit at github</a><a style="float:left; " href="/fluxbox-wiki/editor/
-                                                    ">eddy</a></div></div></div><script src="/fluxbox-wiki/bootstrap-native.min.js "></script><script src="/fluxbox-wiki/headroom.min.js "></script><script src="/fluxbox-wiki/static.js "></script></body></html>
+                                            <p>Dazu müssen allerdings die externen Tabs aktiviert werden, entweder über das Fluxbox-Menü oder in der init Datei.</p>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar sidebar-right col-md-3">
+                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" href="#test">test</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="" href="#gage">gage</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="" href="#hgage">hgage</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_3SLiHqGOHVbGK8BFZOY_3h footer">fluxbox-wiki.org<a style="float:right;" href="https://github.com/sillyslux/fluxbox-wiki/blob/master/pages/WikiPages/Window-Decorations/de.md">edit at github</a><a style="float:left;" href="/fluxbox-wiki/editor/">eddy</a></div>
+    </div>
+    </div>
+    <script src="/fluxbox-wiki/bootstrap-native.min.js"></script>
+    <script src="/fluxbox-wiki/headroom.min.js"></script>
+    <script src="/fluxbox-wiki/static.js"></script>
+</body>
+
+</html>
