@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/fluxbox-wiki/favicon.ico" />
+    <title data-react-helmet="true">Window Decorations - Fluxbox Wiki</title>
+    <link rel="stylesheet" href="/fluxbox-wiki/styles.css" />
+    <script>
+        window.linkPrefix = "/fluxbox-wiki/"
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#spytoc">
+    <div id="react-mount">
+        <div class="react-root">
+            <div class="headroom-wrapper">
+                <div style="position:relative;top:0;left:0;right:0;z-index:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);" class="headroom headroom--unfixed">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container">
+                            <div class="navbar-header"><a class="text-muted navbar-brand" href="/fluxbox-wiki/">fluxbox<span class="navbar-logo"></span>wiki</a><button type="button" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                            <div
+                                class="navbar-collapse collapse">
+                                <div class="navbar-form navbar-right">
+                                    <div id="duck-search" class="form-group form-group-sm"><span class="animated-input slideUp input-group input-group-sm"><input type="text" class="form-control"/></span><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
+                                </div>
+                                <ul class="nav nav-pills navbar-nav navbar-right">
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/en/wiki/">Users</a></li>
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/en/devel/">Developers</a></li>
+                                    <li class="language-menu dropdown"><a data-toggle="dropdown" id="language-menu" role="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" href="#"><span class="flag-icon en"></span> <span class="caret"></span></a>
+                                        <ul role="menu"
+                                            class="dropdown-menu" aria-labelledby="language-menu">
+                                            <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/de/wiki/Rahmen-und-Fensterwerkzeuge/" role="menuitem" tabindex="-1"><span class="flag-icon de"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon en"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon es"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fi"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon hr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon it"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon kr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon pt"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon ru"></span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                        </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <div class="_3FTmA_tB95BYIj7zY-A2zL container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
+                                <div>
+                                    <section>
+                                        <h1>
+                                            <a id="window-decorations"></a><a class="permalink" href="#window-decorations"><span class="glyphicon glyphicon-link"></span></a>Window Decorations</h1>
+                                        <p>subpages</p>
+                                        <ul>
+                                            <li>
+                                                <a href="/fluxbox-wiki/en/wiki/Window-Decorations/Borderless-Windows/" ">borderless windows</a></li>
+<li></li>
+</ul>
+<section>
+<h2><a id="borderless-windows "></a><a class="permalink " href="#borderless-windows "><span class="glyphicon glyphicon-link "></span></a>Borderless Windows</h2><section>
+<h3><a id="disable-borders-by-default "></a><a class="permalink " href="#disable-borders-by-default "><span class="glyphicon glyphicon-link "></span></a>Disable Borders by Default</h3><p>There is session.screen0.defaultDeco settings option in ~/.fluxbox/init, you can disable all window decorations there, or e.g. enable only border and tabs, Settings</p>
+</section>
+<section>
+<h3><a id="toggle-border-visibility "></a><a class="permalink " href="#toggle-border-visibility "><span class="glyphicon glyphicon-link "></span></a>Toggle Border Visibility</h3><section>
+<h4><a id="keyboard-shortcut "></a><a class="permalink " href="#keyboard-shortcut "><span class="glyphicon glyphicon-link "></span></a>Keyboard Shortcut</h4><p>Assign a <a href="/fluxbox-wiki/en/wiki/Keyboard-Shortcuts ">keyboard shortcurt</a>, e.g. <code>Alt+t</code></p>
+<pre><code><span class="hljs-selector-tag ">Mod4</span> <span class="hljs-selector-tag ">t</span> <span class="hljs-selector-pseudo ">:ToggleDecor</span>
+</code></pre>
+</section>
+<section>
+<h4><a id="windowmenu "></a><a class="permalink " href="#windowmenu "><span class="glyphicon glyphicon-link "></span></a>Windowmenu</h4><p>Add an entry to the <a href="/fluxbox-wiki/en/wiki/Windowmenu ">windowmenu</a> <a href="/fluxbox-wiki/de/wiki/Starthilfe/#yay ">windowmenu</a> (right click on window titlebar)
+Add an entry to the <a href="/fluxbox-wiki/en/wiki/Windowmenu ">windowmenu</a> <a href="/fluxbox-wiki/de/wiki/Starthilfe/#sedvidet ">dl</a> (right click on window titlebar)</p>
+<pre><code>[<span class="hljs-name ">toggledecor</span>] (<span class="hljs-name ">Decorations</span>)
+</code></pre>
+<p>Using the above example, you can hold the Win key and hit T to toggle window decorations. You may need to reload your configuration, found in the Fluxbox portion of your menu.</p>
+<p>Per Application (Global)
+If you want a specific application to be always borderless, then right click the window title to bring up the windowmenu. Go to the ‘Remember’ section and enable ‘Save on close’ and ‘Decorations’ Options.
+Now use your keybinding to remove the window decorations. Closing the window will save the settings to your ~/.fluxbox/apps file. All windows of the respective application you open from now on will have no window decorations.</p>
+<p>Per Application (Specific)
+The previous way will be a global setting for one application. For example, if you want your aterm with irssi running in it to be the borderless window, but all other instances of the aterm show the window decoration normally, you need to set a name for this specific aterm. Most terminals use the -name switch for it:</p>
+<p>aterm -name irssiterm -e irssi
+Applying the key-combination on that special aterm will create an entry in your apps file similar to this:</p>
+<p>[app] (name=irssiterm) (class=Aterm)
+[Deco] {NONE}
+[end]
+…and it will only apply for an app named irssiterm, which you can force via the -name switch.</p>
+<p>Global
+You can also have all windows borderless by default, by placing this inside ~/.fluxbox/init:</p>
+<p>session.screen0.defaultDeco: NONE
+A quick configuration reload will make this stick.
+<a href="/fluxbox-wiki/en/wiki/Windowmenu#menu ">windowmenu</a>
+Visit <a href="http://daringfireball.net/ ">Daring Fireball</a> for more information.</p>
+<p>I get 10 times more traffic from [Google] <a href="http://google.com/ " title="Google ">1</a> than from
+[Yahoo] <a href="http://search.yahoo.com/ " title="Yahoo Search ">2</a> or [MSN] <a href="http://search.msn.com/ " title="MSN Search ">3</a>.</p>
+</section>
+</section>
+</section>
+</section>
+</div></div></div><div class="sidebar sidebar-right col-md-3 "><ul id="spytoc " data-spy="affix " data-offset-bottom="120 " data-offset-top="38 " class="nav nav-pills nav-stacked "><li class="dropdown ">
+<a class="dropdown-toggle " href="#window-decorations ">Window Decorations</a>
+<ul class="dropdown-menu "><li class="dropdown ">
+<a class="dropdown-toggle " href="#borderless-windows ">Borderless Windows</a>
+<ul class="dropdown-menu "><li class=" ">
+<a class=" " href="#disable-borders-by-default ">Disable Borders by Default</a>
+</li><li class="dropdown ">
+<a class="dropdown-toggle " href="#toggle-border-visibility ">Toggle Border Visibility</a>
+<ul class="dropdown-menu "><li class=" ">
+<a class=" " href="#keyboard-shortcut ">Keyboard Shortcut</a>
+</li><li class=" ">
+<a class=" " href="#windowmenu ">Windowmenu</a>
+</li></ul></li></ul></li></ul></li></ul><button type="button " class="btn btn-sm btn-link "><span class="glyphicon glyphicon-eye-close "></span></button></div></div></div></div></div><div class="_3SLiHqGOHVbGK8BFZOY_3h footer
+                                                    ">fluxbox-wiki.org<a style="float:right; " href="https://github.com/sillyslux/fluxbox-wiki/blob/master/pages/WikiPages/Window-Decorations/en.md ">edit at github</a><a style="float:left; " href="/fluxbox-wiki/editor/
+                                                    ">eddy</a></div></div></div><script src="/fluxbox-wiki/bootstrap-native.min.js "></script><script src="/fluxbox-wiki/headroom.min.js "></script><script src="/fluxbox-wiki/static.js "></script></body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/fluxbox-wiki/favicon.ico" />
+    <title data-react-helmet="true">Dialog-Boxes - Fluxbox Wiki</title>
+    <link rel="stylesheet" href="/fluxbox-wiki/styles.css" />
+    <script>
+        window.linkPrefix = "/fluxbox-wiki/"
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#spytoc">
+    <div id="react-mount">
+        <div class="react-root">
+            <div class="headroom-wrapper">
+                <div style="position:relative;top:0;left:0;right:0;z-index:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);" class="headroom headroom--unfixed">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container">
+                            <div class="navbar-header"><a class="text-muted navbar-brand" href="/fluxbox-wiki/">fluxbox<span class="navbar-logo"></span>wiki</a><button type="button" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                            <div
+                                class="navbar-collapse collapse">
+                                <div class="navbar-form navbar-right">
+                                    <div id="duck-search" class="form-group form-group-sm"><span class="animated-input slideUp input-group input-group-sm"><input type="text" class="form-control"/></span><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
+                                </div>
+                                <ul class="nav nav-pills navbar-nav navbar-right">
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/en/wiki/">Users</a></li>
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/en/devel/">Developers</a></li>
+                                    <li class="language-menu dropdown"><a data-toggle="dropdown" id="language-menu" role="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" href="#"><span class="flag-icon en"></span> <span class="caret"></span></a>
+                                        <ul role="menu"
+                                            class="dropdown-menu" aria-labelledby="language-menu">
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon de"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon en"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon es"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fi"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon hr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon it"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon kr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon pt"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon ru"></span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                        </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <div class="_3FTmA_tB95BYIj7zY-A2zL container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
+                                <div>
+                                    <section>
+                                        <h1>
+                                            <a id="gtkx11-dialog-boxes"></a><a class="permalink" href="#gtkx11-dialog-boxes"><span class="glyphicon glyphicon-link"></span></a>GTK/X11 Dialog Boxes</h1>
+                                        <p>There are no Fluxbox dialog boxes and there’s no need for that, in your distribution’s package repository look out for:</p>
+                                        <ul>
+                                            <li>xmessage</li>
+                                            <li>zenity</li>
+                                            <li>yad</li>
+                                        </ul>
+                                        <p>Pretty sure there are even more options.</p>
+                                        <p>Use one of these with a bash script and call it from the <a href="">Fluxbox menu</a> or with a <a href="">keyboard shortcut</a>.</p>
+                                        <section>
+                                            <h2>
+                                                <a id="examples"></a><a class="permalink" href="#examples"><span class="glyphicon glyphicon-link"></span></a>Examples</h2>
+                                            <p>bash script: <a href="shutdown.sh">yad shutdown menu</a></p>
+                                            <pre><code><span class="hljs-comment">#! /bin/bash</span>
+
+action=$(yad --width <span class="hljs-number">300</span> --entry --title <span class="hljs-string">"System Logout"</span> \
+    --window-icon=gnome-shutdown \
+    --image=gnome-shutdown \
+    --button=<span class="hljs-string">"gtk-ok:0"</span> --button=<span class="hljs-string">"gtk-close:1"</span> \
+    --text <span class="hljs-string">"Choose action:"</span> \
+    --entry-text \
+    <span class="hljs-string">"Logout"</span> <span class="hljs-string">"Reboot"</span> <span class="hljs-string">"Power Off"</span>)
+ret=$?
+
+[[ <span class="hljs-variable">$ret</span> -eq <span class="hljs-number">1</span> ]] &amp;&amp; <span class="hljs-keyword">exit</span> <span class="hljs-number">0</span>
+
+case <span class="hljs-variable">$action</span> <span class="hljs-keyword">in</span>
+    Logout*) cmd=<span class="hljs-string">"killall fluxbox"</span> ;;
+    Reboot*) cmd=<span class="hljs-string">"sudo /sbin/reboot"</span> ;;
+    Power*) cmd=<span class="hljs-string">"sudo /sbin/poweroff"</span> ;;
+            *) <span class="hljs-keyword">exit</span> <span class="hljs-number">1</span> ;;
+        esac
+
+eval exec <span class="hljs-variable">$cmd</span>
+</code></pre>
+                                            <pre><code>zenity  <span class="hljs-params">--list</span>  <span class="hljs-params">--text</span> <span class="hljs-string">"System Shutdow"</span> <span class="hljs-params">--radiolist</span>  <span class="hljs-params">--column</span> <span class="hljs-string">""</span> <span class="hljs-params">--column</span> <span class="hljs-string">""</span> TRUE <span class="hljs-keyword">shutdown</span> FALSE reboot FALSE suspend FALSE hibernate <span class="hljs-params">--hide-header</span> <span class="hljs-params">--title</span> <span class="hljs-string">"System Shutdown"</span>
+</code></pre>
+                                            <pre><code class="language-xmessage">xmessage <span class="hljs-string">"Are you sure you want to shut down your computer?"</span> -<span class="hljs-keyword">title</span> <span class="hljs-string">"Take action"</span> -<span class="hljs-keyword">default</span> <span class="hljs-string">"Cancel"</span> -buttons <span class="hljs-string">"Cancel"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"Reboot"</span>:<span class="hljs-number">2</span>,<span class="hljs-string">"Shutdown"</span>:<span class="hljs-number">3</span> -
+<span class="hljs-keyword">print</span> -nearmouse
+</code></pre>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar sidebar-right col-md-3">
+                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" href="#gtkx11-dialog-boxes">GTK/X11 Dialog Boxes</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="" href="#examples">Examples</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_3SLiHqGOHVbGK8BFZOY_3h footer">fluxbox-wiki.org<a style="float:right;" href="https://github.com/sillyslux/fluxbox-wiki/blob/master/pages/WikiPages/GTK-Dialog-Boxes/en.md">edit at github</a><a style="float:left;" href="/fluxbox-wiki/editor/">eddy</a></div>
+    </div>
+    </div>
+    <script src="/fluxbox-wiki/bootstrap-native.min.js"></script>
+    <script src="/fluxbox-wiki/headroom.min.js"></script>
+    <script src="/fluxbox-wiki/static.js"></script>
+</body>
+
+</html>
