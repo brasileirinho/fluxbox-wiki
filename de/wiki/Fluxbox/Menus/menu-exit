@@ -1,9 +1,0 @@
-[begin] (Exit)
-
-	[exec] (shutdown) {sudo shutdown -h now}
-	[exec] (suspend) {sudo s2ram}
-	[exec] (reboot) {sudo shutdown -r now}
-	[exit] (logout)
-	[exec] (lock) {xtrlock}
-
-[end]
