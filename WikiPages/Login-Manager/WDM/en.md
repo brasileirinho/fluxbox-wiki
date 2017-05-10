@@ -2,57 +2,76 @@
 title: GDM
 path: /en/wiki/Login-Manager/WDM/
 ---
-Note: This was copied from fluxbox's site. Someone using gdm should check this etc.
+[WDM](http://voins.program.ru/wdm/) is a small, light-weight replacement for XDM. If you're looking for nice simple replacement to XDM, i would highly recommend it.
 
-How do I add fluxbox to my GDM sessions menu.
+Its fairly easy to add fluxbox (or any other window manager) to its list when logging in.
 
-Create the file: /etc/gdm/Sessions/fluxbox with contents:
-```
-#!/bin/sh
-#
-# /etc/gdm/Sessions/fluxbox
-#
-# global fluxbox session file -- used by gdm
+\_\_TOC\_\_ I assume you've got WDM installed and working properly. If not, go do that and then come back.
 
-exec /etc/X11/Xsession /usr/bin/startfluxbox
-```
-Of course, change /usr/bin/startfluxbox to wherever your startfluxbox startup script is.
+Firstly, you'll need to edit two of the config files for wdm. The first being **Xclients** and the second being **wdm-config**. On my distribution ([Gentoo](http://www.gentoo.org)) these are located in **/etc/X11/wdm**.
 
-If the /etc/gdm directory doesn't exist, it may be /etc/X11/gdm/Sessions/fluxbox on your computer.
+Editing the **Xclients** file
+-----------------------------
 
-The first section doesnt work for me, what can I do?
+In the **Xclients** file we'll need to add a little bit of scripting that will check if the fluxbox executable exists, and is executable.
 
-If your on debian distro you need to touch ~/.Xsession use your favorite editor edit ~/.Xsession and put exec /usr/bin/startfluxbox then save the file and restart your GDM session.
+Open the **Xclients** file with your favourite editor. The part of the script we want to change starts like this:
 
-There is another way
+` # First thing - check the user preferences`
+` if [ -f $HOME/.wm_style ] ; then`
+``     WMSTYLE=`cat $HOME/.wm_style` ``
+`    case "$WMSTYLE" in`
 
-On some distros you need to do something a bit different. For Debian, Ubuntu and a few other distros you need to follow this little guide instead.
+and is filled out with a bunch of items that look like this:
 
-If you decide you need to compile Fluxbox from git on your Ubuntu system you might have noticed, after it installed, that there was no way to start using Fluxbox, even if you tried to do
+` wmaker*|WindowMaker*)`
+`   # startup WindowMaker`
+`   WMAKER_PATH=/usr/bin/wmaker`
+`   if ! test -x $WMAKER_PATH ; then`
+`      FindInPath $WMAKER_PATH`
+`      if test -n "$result" -a -x "$result"; then`
+`          WMAKER_PATH="$result";`
+`      fi`
+`   fi`
+`   if test -x $WMAKER_PATH ; then`
+`      echo Starting WindowMaker >$HOME/.xwm.msgs`
+`      env > "$HOME"/Xrootenv.0`
+`      exec $WMAKER_PATH >>$HOME/.xwm.msgs 2>&1`
+`   fi`
+`   ;;`
+`   esac`
+` fi`
 
- $ startx `which fluxbox` -- :1
+we need to add a piece of code to tell it to check for the fluxbox executable. so before the finishing code displayed above, add the following lines:
 
-you get premission denied and are unable to connect to the X server (I only tried this on Hoary). So on to the fix....
+` fluxbox*|FluxBox)`
+` # startup fluxbox`
+` FLUXBOX_PATH=/usr/bin/startfluxbox`
+` if ! test -x $FLUXBOX_PATH ; then`
+`   FindInPath $FLUXBOX_PATH`
+`   if test -n "$result" -a -x "$result"; then`
+`     $FLUXBOX_PATH="$result";`
+`   fi`
+` fi`
+` if [ -x $FLUXBOX_PATH ] ; then`
+`   echo Starting FluxBox >$HOME/.xwm.msgs`
+`   exec $FLUXBOX_PATH >>$HOME/.xwm.msgs 2>&1`
+` fi`
+` ;;`
 
- $ sudo gedit /usr/share/xsessions/fluxbox.desktop
+Editing the **wdm-config** file
+-------------------------------
 
-Add to that file the following information:
+After weve done this, we'll need to add fluxbox to the wdm-config file. Open this file with your favourite editor, and find the line that looks like this:
 
- [Desktop Entry]
- Encoding=UTF-8
- Name=Fluxbox
- Comment=Highly configureable low resource X11 Window Manager
- Exec=/usr/local/bin/startfluxbox
- Terminal=False
- TryExec=/usr/local/bin/startfluxbox
- Type=Application
+`  DisplayManager*wdmWm:           WindowMaker:None`
 
-NOTE: The bold lines, /usr/local/bin/startfluxbox are for custom built fluxboxs. If you have installed with the package manager, use /usr/bin/startfluxbox.
+and change it so it looks like this
 
-NOTE: For FreeBSD 6.0 try to put fluxbox.desktop on /usr/X11R6/share/gdm/xsessions/fluxbox.desktop
+`  DisplayManager*wdmWm:  WindowMaker:FluxBox`
 
-Then save the file and restart your GDM session. This can be done by logging out of your current X session then pressing ctrl+alt+backspace note: NOT ctrl+alt+del (that would work but will also reboot your computer)
+And that's all there is to it. Restart WDM and hey presto, FluxBox apears in the menu.
 
-Customize the startup script
+Enjoy
 
-To customize the startup script see this page You will find information explaining how to start applications at startup, how to execute apps automatically after fluxbox has already started, and other topics.
+[Category:English howtos](Category:English howtos "wikilink") [Category:Integration/Startup howtos](Category:Integration/Startup howtos "wikilink")

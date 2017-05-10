@@ -2,57 +2,37 @@
 title: GDM
 path: /en/wiki/Login-Manager/KDM/
 ---
-Note: This was copied from fluxbox's site. Someone using gdm should check this etc.
+kdm should automatically find that you have installed fluxbox and will display it as a choice.
 
-How do I add fluxbox to my GDM sessions menu.
+fluxbox startup script
+----------------------
 
-Create the file: /etc/gdm/Sessions/fluxbox with contents:
-```
-#!/bin/sh
-#
-# /etc/gdm/Sessions/fluxbox
-#
-# global fluxbox session file -- used by gdm
+By this way it is not possible (at least in my *Debian 3.1 Sarge* with *kdm*) to use *\~/.fluxbox/startup* script, but in *Debian 4.0 Etch* it seems to work.
 
-exec /etc/X11/Xsession /usr/bin/startfluxbox
-```
-Of course, change /usr/bin/startfluxbox to wherever your startfluxbox startup script is.
+For *Debian 3.1 Sarge*, first edit **/usr/share/xsessions/fluxbox.desktop**:
 
-If the /etc/gdm directory doesn't exist, it may be /etc/X11/gdm/Sessions/fluxbox on your computer.
+` [Desktop Entry]`
+` Encoding=UTF-8`
+` Name=Fluxbox`
+` Comment=Highly configurable and low resource X11 Window manager`
+` `**`Exec=/usr/bin/startfluxbox`**
+` Terminal=False`
+` `**`TryExec=/usr/bin/startfluxbox`**
+` Type=Application`
+` `
+` [Window Manager]`
+` SessionManaged=true`
 
-The first section doesnt work for me, what can I do?
+changing the bold lines: it's started */usr/bin/startfluxbox* script, not just *fluxbox*. Finally edit **\~/.fluxbox/startup**:
 
-If your on debian distro you need to touch ~/.Xsession use your favorite editor edit ~/.Xsession and put exec /usr/bin/startfluxbox then save the file and restart your GDM session.
+` #!/bin/bash`
+` `
+` ## uncomment it to launch xscreensaver or idesk`
+` ##xscreensaver &`
+` ##idesk &`
+` `
+` exec /usr/bin/fluxbox`
 
-There is another way
+Now it is possible to start a fluxbox session from kdm and use the startup script *\~/.fluxbox/startup* to fit your needs.
 
-On some distros you need to do something a bit different. For Debian, Ubuntu and a few other distros you need to follow this little guide instead.
-
-If you decide you need to compile Fluxbox from git on your Ubuntu system you might have noticed, after it installed, that there was no way to start using Fluxbox, even if you tried to do
-
- $ startx `which fluxbox` -- :1
-
-you get premission denied and are unable to connect to the X server (I only tried this on Hoary). So on to the fix....
-
- $ sudo gedit /usr/share/xsessions/fluxbox.desktop
-
-Add to that file the following information:
-
- [Desktop Entry]
- Encoding=UTF-8
- Name=Fluxbox
- Comment=Highly configureable low resource X11 Window Manager
- Exec=/usr/local/bin/startfluxbox
- Terminal=False
- TryExec=/usr/local/bin/startfluxbox
- Type=Application
-
-NOTE: The bold lines, /usr/local/bin/startfluxbox are for custom built fluxboxs. If you have installed with the package manager, use /usr/bin/startfluxbox.
-
-NOTE: For FreeBSD 6.0 try to put fluxbox.desktop on /usr/X11R6/share/gdm/xsessions/fluxbox.desktop
-
-Then save the file and restart your GDM session. This can be done by logging out of your current X session then pressing ctrl+alt+backspace note: NOT ctrl+alt+del (that would work but will also reboot your computer)
-
-Customize the startup script
-
-To customize the startup script see this page You will find information explaining how to start applications at startup, how to execute apps automatically after fluxbox has already started, and other topics.
+[Category:English howtos](Category:English howtos "wikilink") [Category:Integration/Startup howtos](Category:Integration/Startup howtos "wikilink")
