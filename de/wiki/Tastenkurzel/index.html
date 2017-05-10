@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/fluxbox-wiki/favicon.ico" />
+    <title data-react-helmet="true">Tastenkürzel - Fluxbox Wiki</title>
+    <link rel="stylesheet" href="/fluxbox-wiki/styles.css" />
+    <script>
+        window.linkPrefix = "/fluxbox-wiki/"
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#spytoc">
+    <div id="react-mount">
+        <div class="react-root">
+            <div class="headroom-wrapper">
+                <div style="position:relative;top:0;left:0;right:0;z-index:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);" class="headroom headroom--unfixed">
+                    <nav class="navbar navbar-inverse">
+                        <div class="container">
+                            <div class="navbar-header"><a class="text-muted navbar-brand" href="/fluxbox-wiki/">fluxbox<span class="navbar-logo"></span>wiki</a><button type="button" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                            <div
+                                class="navbar-collapse collapse">
+                                <div class="navbar-form navbar-right">
+                                    <div id="duck-search" class="form-group form-group-sm"><span class="animated-input slideUp input-group input-group-sm"><input type="text" class="form-control"/></span><button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
+                                </div>
+                                <ul class="nav nav-pills navbar-nav navbar-right">
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/de/wiki/">Users</a></li>
+                                    <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/de/devel/">Developers</a></li>
+                                    <li class="language-menu dropdown"><a data-toggle="dropdown" id="language-menu" role="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" href="#"><span class="flag-icon de"></span> <span class="caret"></span></a>
+                                        <ul role="menu"
+                                            class="dropdown-menu" aria-labelledby="language-menu">
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon de"></span></a></li>
+                                            <li role="presentation" class=""><a action="push" href="/fluxbox-wiki/en/wiki/Keyboard-Shortcuts/" role="menuitem" tabindex="-1"><span class="flag-icon en"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon es"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fi"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon fr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon hr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon it"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon kr"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon pt"></span></a></li>
+                                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#"><span class="flag-icon ru"></span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                        </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <div class="_3FTmA_tB95BYIj7zY-A2zL container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
+                                <div>
+                                    <section>
+                                        <h1>
+                                            <a id="tastenkombinationen"></a><a class="permalink" href="#tastenkombinationen"><span class="glyphicon glyphicon-link"></span></a>Tastenkombinationen</h1>
+                                        <p>Die Datei mit Maus- und Tastenkombinationen ist in Fluxbox’s <a href="/fluxbox-wiki/de/wiki/Init-Datei"><code>init</code> Datei</a> definiert. Standartmäßig wird ¸/.fluxbox/keys genutzt, Sie können diese Datei nach
+                                            belieben verändern oder mit einer anderen, leeren Datei beginnen. Nachdem Sie ihre keys Datei bearbeitet haben, müssen Sie fluxbox veranlassen die Konfiguration neu einzulesen. Dazu verwenden Sie den reconfigure
+                                            Befehl.</p>
+                                        <p>Es gibt auch die <a href="/fluxbox-wiki/de/wiki/Installation/#man-pages">man page</a> <code>fluxbox-keys</code> hierzu.</p>
+                                        <section>
+                                            <h2>
+                                                <a id="spezialtasten"></a><a class="permalink" href="#spezialtasten"><span class="glyphicon glyphicon-link"></span></a>Spezialtasten</h2>
+                                            <p>Wenn Spezialtasten Ihrer Tastatur mit Funktionen belegen möchten, können Sie das Programm <code>xev</code> in einem Terminalemulator verwenden um Tastencodes und X11 Symbolnamen der jeweiligen Tasten zu erfahren.
+                                                Weiter unten sehen Sie Beispiele für das Belegen von Spezialtasten (<a href="#zyklisches-andern-der-fenstergrosse-und-position">1</a>).</p>
+                                        </section>
+                                        <section>
+                                            <h2>
+                                                <a id="beispiele"></a><a class="permalink" href="#beispiele"><span class="glyphicon glyphicon-link"></span></a>Beispiele</h2>
+                                            <section>
+                                                <h3>
+                                                    <a id="fensterdekorationen-ein-und-ausschalten"></a><a class="permalink" href="#fensterdekorationen-ein-und-ausschalten"><span class="glyphicon glyphicon-link"></span></a>Fensterdekorationen ein-und ausschalten</h3>
+                                                <pre><code class="language-plain"># toggle window decorations <span class="hljs-keyword">with</span> Super+t
+Mod4 t   :ToggleDecor
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h3>
+                                                    <a id="lautstarkeregelung"></a><a class="permalink" href="#lautstarkeregelung"><span class="glyphicon glyphicon-link"></span></a>Lautstärkeregelung</h3>
+                                                <pre><code class="language-plain"><span class="hljs-comment"># change audio volume</span>
+None XF86AudioLowerVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%-
+None XF86AudioRaiseVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%+
+None XF86AudioMute          :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> toggle
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h3>
+                                                    <a id="zyklisches-andern-der-fenstergrosse-und-position"></a><a class="permalink" href="#zyklisches-andern-der-fenstergrosse-und-position"><span class="glyphicon glyphicon-link"></span></a>zyklisches ändern der Fenstergröße und -position</h3>
+                                                <p class="alert alert-info">When creating somewhat more complicated commands, it may help to write over more lines and use indentations. When you’re done, just concatenate and save. Many editors have keyboard shortcuts like <code>ctrl</code>+<code>j</code>                                                    to join lines and <code>ctrl</code>+<code>m</code> to jump to matching brackets.</p>
+                                                <pre><code class="language-plain">Help :If
+  {Matches (HEAD=<span class="hljs-number">0</span>)}
+    {ToggleCmd
+      {MacroCmd {ResizeTo <span class="hljs-number">640</span> <span class="hljs-number">50</span>%} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> TopLeft} {MaximizeVertical}}
+      {MacroCmd {ResizeTo <span class="hljs-number">640</span> <span class="hljs-number">50</span>%} {MoveTo <span class="hljs-number">640</span> <span class="hljs-number">0</span> TopLeft} {MaximizeVertical}}
+      {MacroCmd {ResizeTo <span class="hljs-number">640</span> <span class="hljs-number">50</span>%} {MoveTo <span class="hljs-number">1280</span> <span class="hljs-number">0</span> TopLeft} {MaximizeVertical}}
+      {MacroCmd {ResizeTo <span class="hljs-number">1280</span> <span class="hljs-number">50</span>%} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> TopLeft} {MaximizeVertical}}
+      {MacroCmd {ResizeTo <span class="hljs-number">1280</span> <span class="hljs-number">50</span>%} {MoveTo <span class="hljs-number">640</span> <span class="hljs-number">0</span> TopLeft} {MaximizeVertical}}
+    }
+    {If {Matches (HEAD=<span class="hljs-number">1</span>)}
+      {ToggleCmd
+        {MacroCmd {ResizeTo <span class="hljs-number">100</span>% <span class="hljs-number">610</span>} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> BottomLeft} {MaximizeHorizontal}}
+        {MacroCmd {ResizeTo <span class="hljs-number">100</span>% <span class="hljs-number">610</span>} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">610</span> BottomLeft} {MaximizeHorizontal}}
+        {MacroCmd {ResizeTo <span class="hljs-number">100</span>% <span class="hljs-number">700</span>} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> TopLeft} {MaximizeHorizontal}}
+        {MacroCmd {ResizeTo <span class="hljs-number">100</span>% <span class="hljs-number">1310</span>} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> TopLeft} {MaximizeHorizontal}}
+        {MacroCmd {ResizeTo <span class="hljs-number">100</span>% <span class="hljs-number">1220</span>} {MoveTo <span class="hljs-number">0</span> <span class="hljs-number">0</span> BottomLeft} {MaximizeHorizontal}}
+      }
+      {MacroCmd {Restore} {Maximize}}
+    }
+</code></pre>
+                                                <pre><code class="language-plain"><span class="xml"># use the special key of a sony notebook to cycle through different window dimensions and positions for the active window, depending on the current display (vertical positioning on head1, horizontal positioning on head2)
+Help :If </span><span class="hljs-template-variable">{Matches (HEAD=0)}</span><span class="xml"> </span><span class="hljs-template-variable">{ToggleCmd {MacroCmd {ResizeTo 640 50%}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeVertical}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 640 50%}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 640 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeVertical}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 640 50%}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 1280 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeVertical}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 1280 50%}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeVertical}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 1280 50%}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 640 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeVertical}</span><span class="xml">} } </span><span class="hljs-template-variable">{<span class="hljs-keyword">If</span> {Matches (HEAD=1)}</span><span class="xml"> </span><span class="hljs-template-variable">{ToggleCmd {MacroCmd {ResizeTo 100% 610}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 BottomLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeHorizontal}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 100% 610}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 610 BottomLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeHorizontal}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 100% 700}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeHorizontal}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 100% 1310}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 TopLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeHorizontal}</span><span class="xml">} </span><span class="hljs-template-variable">{MacroCmd {ResizeTo 100% 1220}</span><span class="xml"> </span><span class="hljs-template-variable">{MoveTo 0 0 BottomLeft}</span><span class="xml"> </span><span class="hljs-template-variable">{MaximizeHorizontal}</span><span class="xml">} } </span><span class="hljs-template-variable">{MacroCmd {Restore}</span><span class="xml"> </span><span class="hljs-template-variable">{Maximize}</span><span class="xml">} }
+</span></code></pre>
+                                            </section>
+                                            <section>
+                                                <h3>
+                                                    <a id="run-any-system-command"></a><a class="permalink" href="#run-any-system-command"><span class="glyphicon glyphicon-link"></span></a>Run any system command</h3>
+                                                <pre><code class="language-plain"><span class="hljs-comment"># use the eject key of a mac keyboard to toogle room lights on/off</span>
+169           :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a1 off"</span> |nc -w 2 192.168.0.10 1099
+Control 169   :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a2 off"</span> |nc -w 2 192.168.0.10 1099
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h3>
+                                                    <a id="open-a-custom-fluxbox-menu"></a><a class="permalink" href="#open-a-custom-fluxbox-menu"><span class="glyphicon glyphicon-link"></span></a>Open a custom fluxbox menu</h3>
+                                                <p>See also: the example for a <a href="/fluxbox-wiki/en/wiki/Fluxbox-Menus/#custom-exit-menu">custom exit menu</a>.</p>
+                                                <pre><code class="language-plain"><span class="hljs-comment"># use Windows-Key + Space to open an otherwise kind-of-hidden menu</span>
+Mod4 space   <span class="hljs-symbol">:CustomMenu</span> ~<span class="hljs-regexp">/.fluxbox/custom</span>-menu
+</code></pre>
+                                            </section>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar sidebar-right col-md-3">
+                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" href="#tastenkombinationen">Tastenkombinationen</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="" href="#spezialtasten">Spezialtasten</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" href="#beispiele">Beispiele</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="">
+                                                    <a class="" href="#fensterdekorationen-ein-und-ausschalten">Fensterdekorationen ein-und ausschalten</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="" href="#lautstarkeregelung">Lautstärkeregelung</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="" href="#zyklisches-andern-der-fenstergrosse-und-position">zyklisches ändern der Fenstergröße und -position</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="" href="#run-any-system-command">Run any system command</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="" href="#open-a-custom-fluxbox-menu">Open a custom fluxbox menu</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modInfo row">
+                <div class="col-xs-12">
+                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">undefined</a> (undefined)
+                </div>
+            </div>
+        </div>
+        <div class="_3SLiHqGOHVbGK8BFZOY_3h footer">fluxbox-wiki.org<a style="float:right;" href="https://github.com/sillyslux/fluxbox-wiki/blob/master/pages/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/de.md">edit at github</a><a style="float:left;" href="/fluxbox-wiki/editor/">eddy</a></div>
+    </div>
+    </div>
+    <script src="/fluxbox-wiki/bootstrap-native.min.js"></script>
+    <script src="/fluxbox-wiki/headroom.min.js"></script>
+    <script src="/fluxbox-wiki/static.js"></script>
+</body>
+
+</html>

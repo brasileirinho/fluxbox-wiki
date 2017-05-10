@@ -1,0 +1,3 @@
+[begin] (Exit Menu)
+  [custommenu] (Exit) {~/.fluxbox/menu_exit}
+[end]
