@@ -1,5 +1,5 @@
 ---
-title: Fluxbox-Style
+title: Styles and Themes
 version: 1
 path: /en/wiki/Fluxbox/Style/
 ---
