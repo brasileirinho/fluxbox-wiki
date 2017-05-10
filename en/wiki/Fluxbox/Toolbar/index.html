@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/fluxbox-wiki/favicon.ico" />
-    <title data-react-helmet="true">Fluxbox Toolbar - Fluxbox Wiki</title>
+    <title data-react-helmet="true">Toolbar - Fluxbox Wiki</title>
     <link rel="stylesheet" href="/fluxbox-wiki/styles.css" />
     <script>
         window.linkPrefix = "/fluxbox-wiki/"
@@ -60,20 +60,23 @@
                                     <section>
                                         <h1>
                                             <a id="the-toolbar"></a><a class="permalink" href="#the-toolbar"><span class="glyphicon glyphicon-link"></span></a>the Toolbar</h1>
-                                        <p>If you plan on using replacement toolbars, you should disable <strong>systray</strong> from the fluxbox toolbar, so it can be taken over. You do that by deleting it from session.gage: in <code>~/.fluxbox/init</code></p>
                                         <section>
                                             <h2>
-                                                <a id="default-menus"></a><a class="permalink" href="#default-menus"><span class="glyphicon glyphicon-link"></span></a>Default Menus</h2>
-                                            <p>There are 3 Menus in fluxbox by default.</p>
-                                            <ul>
-                                                <li>Main Application Menu, right click on the desktop</li>
-                                                <li>Window Menu, right click on a windows titlebar</li>
-                                                <li>Workspace Menu, middle click on the desktop</li>
-                                            </ul>
+                                                <a id="configure"></a><a class="permalink" href="#configure"><span class="glyphicon glyphicon-link"></span></a>Configure</h2>
+                                            <p>Most things can be configured in the toolbar’s own [menu], only to reorder and select toolbar items you will have to edit the file <code>~/.fluxbox/init</code> by hand.</p>
                                         </section>
                                         <section>
                                             <h2>
-                                                <a id="syntax"></a><a class="permalink" href="#syntax"><span class="glyphicon glyphicon-link"></span></a>Syntax</h2>
+                                                <a id="replacements"></a><a class="permalink" href="#replacements"><span class="glyphicon glyphicon-link"></span></a>Replacements</h2>
+                                            <p>If you plan on using replacement toolbars like</p>
+                                            <ul>
+                                                <li>cairo-dock</li>
+                                                <li>tint2 you have to disable <strong>systray</strong> in fluxbox’s toolbar if you want to use it in your replacement.</li>
+                                            </ul>
+                                            <p>To do that, you must changing a line in <code>~/.fluxbox/init</code>, as there is no option for that in the toolbar menu.</p>
+                                            <pre><code>session<span class="hljs-selector-class">.screen0</span><span class="hljs-selector-class">.toolbar</span><span class="hljs-selector-class">.tools</span>:  prevworkspace, workspacename, nextworkspace, clock, prevwindow, nextwindow, iconbar, systray
+session<span class="hljs-selector-class">.screen0</span><span class="hljs-selector-class">.toolbar</span><span class="hljs-selector-class">.tools</span>:  prevworkspace, workspacename, nextworkspace, clock, prevwindow, nextwindow, iconbar
+</code></pre>
                                         </section>
                                     </section>
                                 </div>
@@ -85,10 +88,10 @@
                                     <a class="dropdown-toggle" href="#the-toolbar">the Toolbar</a>
                                     <ul class="dropdown-menu">
                                         <li class="">
-                                            <a class="" href="#default-menus">Default Menus</a>
+                                            <a class="" href="#configure">Configure</a>
                                         </li>
                                         <li class="">
-                                            <a class="" href="#syntax">Syntax</a>
+                                            <a class="" href="#replacements">Replacements</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -98,7 +101,7 @@
             </div>
             <div class="modInfo row">
                 <div class="col-xs-12">
-                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-08 14:13:08 +0200)
+                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 12:39:39 +0200)
                 </div>
             </div>
         </div>

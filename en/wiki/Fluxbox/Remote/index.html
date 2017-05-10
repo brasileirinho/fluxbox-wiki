@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/fluxbox-wiki/favicon.ico" />
-    <title data-react-helmet="true">Fluxbox CLI - Fluxbox Wiki</title>
+    <title data-react-helmet="true">Fluxbox Remote - Fluxbox Wiki</title>
     <link rel="stylesheet" href="/fluxbox-wiki/styles.css" />
     <script>
         window.linkPrefix = "/fluxbox-wiki/"
@@ -59,19 +59,61 @@
                                 <div>
                                     <section>
                                         <h1>
-                                            <a id="fluxbox-menu-system"></a><a class="permalink" href="#fluxbox-menu-system"><span class="glyphicon glyphicon-link"></span></a>Fluxbox Menu System</h1>
-                                        <p class="alert-info alert"><strong>Man-Page:</strong><br>
+                                            <a id="fluxbox-remote"></a><a class="permalink" href="#fluxbox-remote"><span class="glyphicon glyphicon-link"></span></a>Fluxbox Remote</h1>
+                                        <p class="alert-info alert">There is only one program you can use in your console to invoke certain actions in fluxbox.
+                                            <strong>Man-Page:</strong><br>
                                             <code>:~/$ man fluxbox-remote</code>
                                         </p>
                                         <section>
                                             <h2>
-                                                <a id="default-menus"></a><a class="permalink" href="#default-menus"><span class="glyphicon glyphicon-link"></span></a>Default Menus</h2>
-                                            <p>There are 3 Menus in fluxbox by default.</p>
-                                            <ul>
-                                                <li>Main Application Menu, right click on the desktop</li>
-                                                <li>Window Menu, right click on a windows titlebar</li>
-                                                <li>Workspace Menu, middle click on the desktop</li>
-                                            </ul>
+                                                <a id="available-commands"></a><a class="permalink" href="#available-commands"><span class="glyphicon glyphicon-link"></span></a>Available Commands</h2>
+                                            <p>Display available fluxbox commands. Many of these commands are ment to deal with focussed windows, and can only be used from the window-menu, but the list also has some items useful for <code>fluxbox-remote</code>.</p>
+                                            <pre><code>$ fluxbox <span class="hljs-comment">--list-commands</span>
+<span class="hljs-built_in">activate</span>
+activatetab
+addworkspace
+...
+workspace
+workspacemenu
+</code></pre>
+                                        </section>
+                                        <section>
+                                            <h2>
+                                                <a id="usage-examples"></a><a class="permalink" href="#usage-examples"><span class="glyphicon glyphicon-link"></span></a>Usage Examples</h2>
+                                            <section>
+                                                <h4>
+                                                    <a id="logout-from-session"></a><a class="permalink" href="#logout-from-session"><span class="glyphicon glyphicon-link"></span></a>Logout from Session</h4>
+                                                <pre><code>$ fluxbox-remote <span class="hljs-keyword">exit</span>
+<span class="hljs-comment"># or</span>
+$ fluxbox-remote quit
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h4>
+                                                    <a id="minimize-all-applications"></a><a class="permalink" href="#minimize-all-applications"><span class="glyphicon glyphicon-link"></span></a>Minimize all Applications</h4>
+                                                <pre><code><span class="hljs-meta">$</span><span class="bash"> fluxbox-remote showdesktop</span>
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h4>
+                                                    <a id="reload-configuration"></a><a class="permalink" href="#reload-configuration"><span class="glyphicon glyphicon-link"></span></a>Reload Configuration</h4>
+                                                <p>use this after editing the keys file</p>
+                                                <pre><code><span class="hljs-meta">$</span><span class="bash"> fluxbox-remote reconfigure</span>
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h4>
+                                                    <a id="reload-style"></a><a class="permalink" href="#reload-style"><span class="glyphicon glyphicon-link"></span></a>Reload Style</h4>
+                                                <pre><code><span class="hljs-meta">$</span><span class="bash"> fluxbox-remote reloadstyle</span>
+</code></pre>
+                                            </section>
+                                            <section>
+                                                <h4>
+                                                    <a id="fluxbox-restart"></a><a class="permalink" href="#fluxbox-restart"><span class="glyphicon glyphicon-link"></span></a>Fluxbox Restart</h4>
+                                                <p>This might help when fluxbox starts to behave weird.</p>
+                                                <pre><code><span class="hljs-meta">$</span><span class="bash"> fluxbox-remote restart</span>
+</code></pre>
+                                            </section>
                                         </section>
                                     </section>
                                 </div>
@@ -80,10 +122,34 @@
                         <div class="sidebar sidebar-right col-md-3">
                             <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle" href="#fluxbox-menu-system">Fluxbox Menu System</a>
+                                    <a class="dropdown-toggle" href="#fluxbox-remote">Fluxbox Remote</a>
                                     <ul class="dropdown-menu">
                                         <li class="">
-                                            <a class="" href="#default-menus">Default Menus</a>
+                                            <a class="" href="#available-commands">Available Commands</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" href="#usage-examples">Usage Examples</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown">
+                                                    <ul class="dropdown-menu">
+                                                        <li class="">
+                                                            <a class="" href="#logout-from-session">Logout from Session</a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a class="" href="#minimize-all-applications">Minimize all Applications</a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a class="" href="#reload-configuration">Reload Configuration</a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a class="" href="#reload-style">Reload Style</a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a class="" href="#fluxbox-restart">Fluxbox Restart</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
@@ -93,7 +159,7 @@
             </div>
             <div class="modInfo row">
                 <div class="col-xs-12">
-                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-08 14:13:08 +0200)
+                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 12:39:39 +0200)
                 </div>
             </div>
         </div>
