@@ -1,5 +1,5 @@
 ---
-title: GDM
+title: KDM
 path: /en/wiki/Login-Manager/KDM/
 ---
 kdm should automatically find that you have installed fluxbox and will display it as a choice.

@@ -1,5 +1,5 @@
 ---
-title: GDM
+title: LightDM
 path: /en/wiki/Login-Manager/LightDM/
 ---
 Note: This was copied from fluxbox's site. Someone using gdm should check this etc.

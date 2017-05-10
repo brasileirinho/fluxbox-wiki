@@ -1,5 +1,5 @@
 ---
-title: GDM
+title: XDM
 path: /en/wiki/Login-Manager/XDM/
 ---
 Open **/etc/rc.conf** with your favorite text editor, and locate the `XSESSION=""` line. Note that the file may differ depending the distribution you're using.

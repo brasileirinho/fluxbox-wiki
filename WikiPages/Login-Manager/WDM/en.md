@@ -1,5 +1,5 @@
 ---
-title: GDM
+title: WDM
 path: /en/wiki/Login-Manager/WDM/
 ---
 [WDM](http://voins.program.ru/wdm/) is a small, light-weight replacement for XDM. If you're looking for nice simple replacement to XDM, i would highly recommend it.
