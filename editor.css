@@ -1,13 +1,1 @@
-.navEdit {
-  flex: none; }
-  .navEdit .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-    border: 0;
-    border-bottom: 1px solid transparent; }
-    .navEdit .navbar button {
-      margin: 5px; }
-  .navEdit .octicon {
-    display: inline-block;
-    vertical-align: text-top;
-    fill: currentColor; }
+.navEdit{flex:none}.navEdit .navbar{margin-bottom:0;border-radius:0;border:0;border-bottom:1px solid transparent}.navEdit .navbar button{margin:5px}.navEdit .octicon{display:inline-block;vertical-align:text-top;fill:currentColor}

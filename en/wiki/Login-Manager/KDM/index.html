@@ -57,46 +57,53 @@
                         <div class="col-md-9">
                             <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
                                 <div>
-                                    <p>Note: This was copied from fluxbox’s site. Someone using gdm should check this etc.</p>
-                                    <p>How do I add fluxbox to my GDM sessions menu.</p>
-                                    <p>Create the file: /etc/gdm/Sessions/fluxbox with contents:</p>
-                                    <pre><code><span class="hljs-meta">#!/bin/sh</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># /etc/gdm/Sessions/fluxbox</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># global fluxbox session file -- used by gdm</span>
-
-<span class="hljs-built_in">exec</span> /etc/X11/Xsession /usr/bin/startfluxbox
-</code></pre>
-                                    <p>Of course, change /usr/bin/startfluxbox to wherever your startfluxbox startup script is.</p>
-                                    <p>If the /etc/gdm directory doesn’t exist, it may be /etc/X11/gdm/Sessions/fluxbox on your computer.</p>
-                                    <p>The first section doesnt work for me, what can I do?</p>
-                                    <p>If your on debian distro you need to touch ~/.Xsession use your favorite editor edit ~/.Xsession and put exec /usr/bin/startfluxbox then save the file and restart your GDM session.</p>
-                                    <p>There is another way</p>
-                                    <p>On some distros you need to do something a bit different. For Debian, Ubuntu and a few other distros you need to follow this little guide instead.</p>
-                                    <p>If you decide you need to compile Fluxbox from git on your Ubuntu system you might have noticed, after it installed, that there was no way to start using Fluxbox, even if you tried to do</p>
-                                    <p>$ startx <code>which fluxbox</code> – :1</p>
-                                    <p>you get premission denied and are unable to connect to the X server (I only tried this on Hoary). So on to the fix…</p>
-                                    <p>$ sudo gedit /usr/share/xsessions/fluxbox.desktop</p>
-                                    <p>Add to that file the following information:</p>
-                                    <p>[Desktop Entry] Encoding=UTF-8 Name=Fluxbox Comment=Highly configureable low resource X11 Window Manager Exec=/usr/local/bin/startfluxbox Terminal=False TryExec=/usr/local/bin/startfluxbox Type=Application
-                                    </p>
-                                    <p>NOTE: The bold lines, /usr/local/bin/startfluxbox are for custom built fluxboxs. If you have installed with the package manager, use /usr/bin/startfluxbox.</p>
-                                    <p>NOTE: For FreeBSD 6.0 try to put fluxbox.desktop on /usr/X11R6/share/gdm/xsessions/fluxbox.desktop</p>
-                                    <p>Then save the file and restart your GDM session. This can be done by logging out of your current X session then pressing ctrl+alt+backspace note: NOT ctrl+alt+del (that would work but will also reboot your computer)</p>
-                                    <p>Customize the startup script</p>
-                                    <p>To customize the startup script see this page You will find information explaining how to start applications at startup, how to execute apps automatically after fluxbox has already started, and other topics.</p>
+                                    <p>kdm should automatically find that you have installed fluxbox and will display it as a choice.</p>
+                                    <section>
+                                        <h2>
+                                            <a id="fluxbox-startup-script"></a><a class="permalink" href="#fluxbox-startup-script"><span class="glyphicon glyphicon-link"></span></a>fluxbox startup script</h2>
+                                        <p>By this way it is not possible (at least in my <em>Debian 3.1 Sarge</em> with <em>kdm</em>) to use <em>~/.fluxbox/startup</em> script, but in <em>Debian 4.0 Etch</em> it seems to work.</p>
+                                        <p>For <em>Debian 3.1 Sarge</em>, first edit <strong>/usr/share/xsessions/fluxbox.desktop</strong>:</p>
+                                        <p><code>[Desktop Entry]</code>
+                                            <code>Encoding=UTF-8</code>
+                                            <code>Name=Fluxbox</code>
+                                            <code>Comment=Highly configurable and low resource X11 Window manager</code>
+                                            <code></code><strong><code>Exec=/usr/bin/startfluxbox</code></strong>
+                                            <code>Terminal=False</code>
+                                            <code></code><strong><code>TryExec=/usr/bin/startfluxbox</code></strong>
+                                            <code>Type=Application</code>
+                                            <code></code>
+                                            <code>[Window Manager]</code>
+                                            <code>SessionManaged=true</code></p>
+                                        <p>changing the bold lines: it’s started <em>/usr/bin/startfluxbox</em> script, not just <em>fluxbox</em>. Finally edit <strong>~/.fluxbox/startup</strong>:</p>
+                                        <p><code>#!/bin/bash</code>
+                                            <code></code>
+                                            <code>## uncomment it to launch xscreensaver or idesk</code>
+                                            <code>##xscreensaver &amp;</code>
+                                            <code>##idesk &amp;</code>
+                                            <code></code>
+                                            <code>exec /usr/bin/fluxbox</code></p>
+                                        <p>Now it is possible to start a fluxbox session from kdm and use the startup script <em>~/.fluxbox/startup</em> to fit your needs.</p>
+                                        <p>[Category:English howtos](Category:English howtos “wikilink”) [Category:Integration/Startup howtos](Category:Integration/Startup howtos “wikilink”)</p>
+                                    </section>
                                 </div>
                             </div>
                         </div>
                         <div class="sidebar sidebar-right col-md-3">
-                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked"></ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
+                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
+                                <li class="dropdown">
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="" href="#fluxbox-startup-script">fluxbox startup script</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
                     </div>
                 </div>
             </div>
             <div class="modInfo row">
                 <div class="col-xs-12">
-                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 13:54:11 +0200)
+                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 14:32:17 +0200)
                 </div>
             </div>
         </div>

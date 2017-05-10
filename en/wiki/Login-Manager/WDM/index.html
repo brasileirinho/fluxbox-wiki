@@ -57,46 +57,87 @@
                         <div class="col-md-9">
                             <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
                                 <div>
-                                    <p>Note: This was copied from fluxbox’s site. Someone using gdm should check this etc.</p>
-                                    <p>How do I add fluxbox to my GDM sessions menu.</p>
-                                    <p>Create the file: /etc/gdm/Sessions/fluxbox with contents:</p>
-                                    <pre><code><span class="hljs-meta">#!/bin/sh</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># /etc/gdm/Sessions/fluxbox</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># global fluxbox session file -- used by gdm</span>
-
-<span class="hljs-built_in">exec</span> /etc/X11/Xsession /usr/bin/startfluxbox
-</code></pre>
-                                    <p>Of course, change /usr/bin/startfluxbox to wherever your startfluxbox startup script is.</p>
-                                    <p>If the /etc/gdm directory doesn’t exist, it may be /etc/X11/gdm/Sessions/fluxbox on your computer.</p>
-                                    <p>The first section doesnt work for me, what can I do?</p>
-                                    <p>If your on debian distro you need to touch ~/.Xsession use your favorite editor edit ~/.Xsession and put exec /usr/bin/startfluxbox then save the file and restart your GDM session.</p>
-                                    <p>There is another way</p>
-                                    <p>On some distros you need to do something a bit different. For Debian, Ubuntu and a few other distros you need to follow this little guide instead.</p>
-                                    <p>If you decide you need to compile Fluxbox from git on your Ubuntu system you might have noticed, after it installed, that there was no way to start using Fluxbox, even if you tried to do</p>
-                                    <p>$ startx <code>which fluxbox</code> – :1</p>
-                                    <p>you get premission denied and are unable to connect to the X server (I only tried this on Hoary). So on to the fix…</p>
-                                    <p>$ sudo gedit /usr/share/xsessions/fluxbox.desktop</p>
-                                    <p>Add to that file the following information:</p>
-                                    <p>[Desktop Entry] Encoding=UTF-8 Name=Fluxbox Comment=Highly configureable low resource X11 Window Manager Exec=/usr/local/bin/startfluxbox Terminal=False TryExec=/usr/local/bin/startfluxbox Type=Application
-                                    </p>
-                                    <p>NOTE: The bold lines, /usr/local/bin/startfluxbox are for custom built fluxboxs. If you have installed with the package manager, use /usr/bin/startfluxbox.</p>
-                                    <p>NOTE: For FreeBSD 6.0 try to put fluxbox.desktop on /usr/X11R6/share/gdm/xsessions/fluxbox.desktop</p>
-                                    <p>Then save the file and restart your GDM session. This can be done by logging out of your current X session then pressing ctrl+alt+backspace note: NOT ctrl+alt+del (that would work but will also reboot your computer)</p>
-                                    <p>Customize the startup script</p>
-                                    <p>To customize the startup script see this page You will find information explaining how to start applications at startup, how to execute apps automatically after fluxbox has already started, and other topics.</p>
+                                    <p><a href="http://voins.program.ru/wdm/">WDM</a> is a small, light-weight replacement for XDM. If you’re looking for nice simple replacement to XDM, i would highly recommend it.</p>
+                                    <p>Its fairly easy to add fluxbox (or any other window manager) to its list when logging in.</p>
+                                    <p>__TOC__ I assume you’ve got WDM installed and working properly. If not, go do that and then come back.</p>
+                                    <p>Firstly, you’ll need to edit two of the config files for wdm. The first being <strong>Xclients</strong> and the second being <strong>wdm-config</strong>. On my distribution (<a href="http://www.gentoo.org">Gentoo</a>)
+                                        these are located in <strong>/etc/X11/wdm</strong>.</p>
+                                    <section>
+                                        <h2>
+                                            <a id="editing-the-xclients-file"></a><a class="permalink" href="#editing-the-xclients-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>Xclients</strong> file</h2>
+                                        <p>In the <strong>Xclients</strong> file we’ll need to add a little bit of scripting that will check if the fluxbox executable exists, and is executable.</p>
+                                        <p>Open the <strong>Xclients</strong> file with your favourite editor. The part of the script we want to change starts like this:</p>
+                                        <p><code># First thing - check the user preferences</code>
+                                            <code>if [ -f $HOME/.wm_style ] ; then</code>
+                                            <code>WMSTYLE=`cat $HOME/.wm_style`</code>
+                                            <code>case &quot;$WMSTYLE&quot; in</code></p>
+                                        <p>and is filled out with a bunch of items that look like this:</p>
+                                        <p><code>wmaker*|WindowMaker*)</code>
+                                            <code># startup WindowMaker</code>
+                                            <code>WMAKER_PATH=/usr/bin/wmaker</code>
+                                            <code>if ! test -x $WMAKER_PATH ; then</code>
+                                            <code>FindInPath $WMAKER_PATH</code>
+                                            <code>if test -n &quot;$result&quot; -a -x &quot;$result&quot;; then</code>
+                                            <code>WMAKER_PATH=&quot;$result&quot;;</code>
+                                            <code>fi</code>
+                                            <code>fi</code>
+                                            <code>if test -x $WMAKER_PATH ; then</code>
+                                            <code>echo Starting WindowMaker &gt;$HOME/.xwm.msgs</code>
+                                            <code>env &gt; &quot;$HOME&quot;/Xrootenv.0</code>
+                                            <code>exec $WMAKER_PATH &gt;&gt;$HOME/.xwm.msgs 2&gt;&amp;1</code>
+                                            <code>fi</code>
+                                            <code>;;</code>
+                                            <code>esac</code>
+                                            <code>fi</code></p>
+                                        <p>we need to add a piece of code to tell it to check for the fluxbox executable. so before the finishing code displayed above, add the following lines:</p>
+                                        <p><code>fluxbox*|FluxBox)</code>
+                                            <code># startup fluxbox</code>
+                                            <code>FLUXBOX_PATH=/usr/bin/startfluxbox</code>
+                                            <code>if ! test -x $FLUXBOX_PATH ; then</code>
+                                            <code>FindInPath $FLUXBOX_PATH</code>
+                                            <code>if test -n &quot;$result&quot; -a -x &quot;$result&quot;; then</code>
+                                            <code>$FLUXBOX_PATH=&quot;$result&quot;;</code>
+                                            <code>fi</code>
+                                            <code>fi</code>
+                                            <code>if [ -x $FLUXBOX_PATH ] ; then</code>
+                                            <code>echo Starting FluxBox &gt;$HOME/.xwm.msgs</code>
+                                            <code>exec $FLUXBOX_PATH &gt;&gt;$HOME/.xwm.msgs 2&gt;&amp;1</code>
+                                            <code>fi</code>
+                                            <code>;;</code></p>
+                                    </section>
+                                    <section>
+                                        <h2>
+                                            <a id="editing-the-wdm-config-file"></a><a class="permalink" href="#editing-the-wdm-config-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>wdm-config</strong> file</h2>
+                                        <p>After weve done this, we’ll need to add fluxbox to the wdm-config file. Open this file with your favourite editor, and find the line that looks like this:</p>
+                                        <p><code>DisplayManager*wdmWm: WindowMaker:None</code></p>
+                                        <p>and change it so it looks like this</p>
+                                        <p><code>DisplayManager*wdmWm: WindowMaker:FluxBox</code></p>
+                                        <p>And that’s all there is to it. Restart WDM and hey presto, FluxBox apears in the menu.</p>
+                                        <p>Enjoy</p>
+                                        <p>[Category:English howtos](Category:English howtos “wikilink”) [Category:Integration/Startup howtos](Category:Integration/Startup howtos “wikilink”)</p>
+                                    </section>
                                 </div>
                             </div>
                         </div>
                         <div class="sidebar sidebar-right col-md-3">
-                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked"></ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
+                            <ul id="spytoc" data-spy="affix" data-offset-bottom="120" data-offset-top="38" class="nav nav-pills nav-stacked">
+                                <li class="dropdown">
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="" href="#editing-the-xclients-file">Editing the **Xclients** file</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="" href="#editing-the-wdm-config-file">Editing the **wdm-config** file</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul><button type="button" class="btn btn-sm btn-link"><span class="glyphicon glyphicon-eye-close"></span></button></div>
                     </div>
                 </div>
             </div>
             <div class="modInfo row">
                 <div class="col-xs-12">
-                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 13:54:11 +0200)
+                    Last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commit/undefined#undefined">sillyslux</a> (2017-05-10 14:32:17 +0200)
                 </div>
             </div>
         </div>
