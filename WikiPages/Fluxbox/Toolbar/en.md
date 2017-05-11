@@ -11,6 +11,8 @@ Most things can be configured in the toolbar's own [menu], only to reorder and s
 If you plan on using replacement toolbars like
 - cairo-dock
 - tint2
+- stalonetray (systray only)
+- trayer
 you have to disable **systray** in fluxbox's toolbar if you want to use it in your replacement.
 
 To do that, you must changing a line in ``~/.fluxbox/init``, as there is no option for that in the toolbar menu.
