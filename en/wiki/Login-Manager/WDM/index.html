@@ -63,8 +63,7 @@
                                     <p>Firstly, you’ll need to edit two of the config files for wdm. The first being <strong>Xclients</strong> and the second being <strong>wdm-config</strong>. On my distribution (<a href="http://www.gentoo.org">Gentoo</a>)
                                         these are located in <strong>/etc/X11/wdm</strong>.</p>
                                     <section>
-                                        <h2>
-                                            <a id="editing-the-xclients-file"></a><a class="permalink" href="#editing-the-xclients-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>Xclients</strong> file</h2>
+                                        <h2><a id="editing-the-xclients-file"></a><a class="permalink" href="#editing-the-xclients-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>Xclients</strong> file</h2>
                                         <p>In the <strong>Xclients</strong> file we’ll need to add a little bit of scripting that will check if the fluxbox executable exists, and is executable.</p>
                                         <p>Open the <strong>Xclients</strong> file with your favourite editor. The part of the script we want to change starts like this:</p>
                                         <p><code># First thing - check the user preferences</code>
@@ -106,8 +105,7 @@
                                             <code>;;</code></p>
                                     </section>
                                     <section>
-                                        <h2>
-                                            <a id="editing-the-wdm-config-file"></a><a class="permalink" href="#editing-the-wdm-config-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>wdm-config</strong> file</h2>
+                                        <h2><a id="editing-the-wdm-config-file"></a><a class="permalink" href="#editing-the-wdm-config-file"><span class="glyphicon glyphicon-link"></span></a>Editing the <strong>wdm-config</strong> file</h2>
                                         <p>After weve done this, we’ll need to add fluxbox to the wdm-config file. Open this file with your favourite editor, and find the line that looks like this:</p>
                                         <p><code>DisplayManager*wdmWm: WindowMaker:None</code></p>
                                         <p>and change it so it looks like this</p>

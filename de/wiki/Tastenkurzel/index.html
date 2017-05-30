@@ -58,31 +58,26 @@
                             <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
                                 <div>
                                     <section>
-                                        <h1>
-                                            <a id="tastenkombinationen"></a><a class="permalink" href="#tastenkombinationen"><span class="glyphicon glyphicon-link"></span></a>Tastenkombinationen</h1>
+                                        <h1><a id="tastenkombinationen"></a><a class="permalink" href="#tastenkombinationen"><span class="glyphicon glyphicon-link"></span></a>Tastenkombinationen</h1>
                                         <p>Die Datei mit Maus- und Tastenkombinationen ist in Fluxbox’s <a href="/fluxbox-wiki/de/wiki/Init-Datei"><code>init</code> Datei</a> definiert. Standartmäßig wird ¸/.fluxbox/keys genutzt, Sie können diese Datei nach
                                             belieben verändern oder mit einer anderen, leeren Datei beginnen. Nachdem Sie ihre keys Datei bearbeitet haben, müssen Sie fluxbox veranlassen die Konfiguration neu einzulesen. Dazu verwenden Sie den reconfigure
                                             Befehl.</p>
                                         <p>Es gibt auch die <a href="/fluxbox-wiki/de/wiki/Installation/#man-pages">man page</a> <code>fluxbox-keys</code> hierzu.</p>
                                         <section>
-                                            <h2>
-                                                <a id="spezialtasten"></a><a class="permalink" href="#spezialtasten"><span class="glyphicon glyphicon-link"></span></a>Spezialtasten</h2>
+                                            <h2><a id="spezialtasten"></a><a class="permalink" href="#spezialtasten"><span class="glyphicon glyphicon-link"></span></a>Spezialtasten</h2>
                                             <p>Wenn Spezialtasten Ihrer Tastatur mit Funktionen belegen möchten, können Sie das Programm <code>xev</code> in einem Terminalemulator verwenden um Tastencodes und X11 Symbolnamen der jeweiligen Tasten zu erfahren.
                                                 Weiter unten sehen Sie Beispiele für das Belegen von Spezialtasten (<a href="#zyklisches-andern-der-fenstergrosse-und-position">1</a>).</p>
                                         </section>
                                         <section>
-                                            <h2>
-                                                <a id="beispiele"></a><a class="permalink" href="#beispiele"><span class="glyphicon glyphicon-link"></span></a>Beispiele</h2>
+                                            <h2><a id="beispiele"></a><a class="permalink" href="#beispiele"><span class="glyphicon glyphicon-link"></span></a>Beispiele</h2>
                                             <section>
-                                                <h3>
-                                                    <a id="fensterdekorationen-ein-und-ausschalten"></a><a class="permalink" href="#fensterdekorationen-ein-und-ausschalten"><span class="glyphicon glyphicon-link"></span></a>Fensterdekorationen ein-und ausschalten</h3>
+                                                <h3><a id="fensterdekorationen-ein-und-ausschalten"></a><a class="permalink" href="#fensterdekorationen-ein-und-ausschalten"><span class="glyphicon glyphicon-link"></span></a>Fensterdekorationen ein-und ausschalten</h3>
                                                 <pre><code class="language-plain"># toggle window decorations <span class="hljs-keyword">with</span> Super+t
 Mod4 t   :ToggleDecor
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="lautstarkeregelung"></a><a class="permalink" href="#lautstarkeregelung"><span class="glyphicon glyphicon-link"></span></a>Lautstärkeregelung</h3>
+                                                <h3><a id="lautstarkeregelung"></a><a class="permalink" href="#lautstarkeregelung"><span class="glyphicon glyphicon-link"></span></a>Lautstärkeregelung</h3>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># change audio volume</span>
 None XF86AudioLowerVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%-
 None XF86AudioRaiseVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%+
@@ -90,8 +85,8 @@ None XF86AudioMute          :Exec amixer sset <span class="hljs-literal">Master<
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="zyklisches-andern-der-fenstergrosse-und-position"></a><a class="permalink" href="#zyklisches-andern-der-fenstergrosse-und-position"><span class="glyphicon glyphicon-link"></span></a>zyklisches ändern der Fenstergröße und -position</h3>
+                                                <h3><a id="zyklisches-andern-der-fenstergrosse-und-position"></a><a class="permalink" href="#zyklisches-andern-der-fenstergrosse-und-position"><span class="glyphicon glyphicon-link"></span></a>zyklisches ändern
+                                                    der Fenstergröße und -position</h3>
                                                 <p class="alert alert-info">When creating somewhat more complicated commands, it may help to write over more lines and use indentations. When you’re done, just concatenate and save. Many editors have keyboard shortcuts like <code>ctrl</code>+<code>j</code>                                                    to join lines and <code>ctrl</code>+<code>m</code> to jump to matching brackets.</p>
                                                 <pre><code class="language-plain">Help :If
   {Matches (HEAD=<span class="hljs-number">0</span>)}
@@ -118,16 +113,14 @@ Help :If </span><span class="hljs-template-variable">{Matches (HEAD=0)}</span><s
 </span></code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="run-any-system-command"></a><a class="permalink" href="#run-any-system-command"><span class="glyphicon glyphicon-link"></span></a>Run any system command</h3>
+                                                <h3><a id="run-any-system-command"></a><a class="permalink" href="#run-any-system-command"><span class="glyphicon glyphicon-link"></span></a>Run any system command</h3>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># use the eject key of a mac keyboard to toogle room lights on/off</span>
 169           :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a1 off"</span> |nc -w 2 192.168.0.10 1099
 Control 169   :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a2 off"</span> |nc -w 2 192.168.0.10 1099
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="open-a-custom-fluxbox-menu"></a><a class="permalink" href="#open-a-custom-fluxbox-menu"><span class="glyphicon glyphicon-link"></span></a>Open a custom fluxbox menu</h3>
+                                                <h3><a id="open-a-custom-fluxbox-menu"></a><a class="permalink" href="#open-a-custom-fluxbox-menu"><span class="glyphicon glyphicon-link"></span></a>Open a custom fluxbox menu</h3>
                                                 <p>See also: the example for a <a href="/fluxbox-wiki/en/wiki/Fluxbox-Menus/#custom-exit-menu">custom exit menu</a>.</p>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># use Windows-Key + Space to open an otherwise kind-of-hidden menu</span>
 Mod4 space   <span class="hljs-symbol">:CustomMenu</span> ~<span class="hljs-regexp">/.fluxbox/custom</span>-menu
@@ -173,9 +166,7 @@ Mod4 space   <span class="hljs-symbol">:CustomMenu</span> ~<span class="hljs-reg
                 </div>
             </div>
             <div class="_1S0OMxoLaHmh6v7M9JzTMk row">
-                <div class="col-xs-12">zuletzt geändert: <a href="//github.com/sillyslux/fluxbox-wiki/commits/69d68851ac4ed3655eeab15050e033226b6c2a8e/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/de.md">sillyslux</a> Dienstag, 25. April 2017 23:57
-                    <a href="/fluxbox-wiki/editor/"><span class="eZCKryaB57Sym_VEVFivV" style="margin:0 -15px 0 4px;"><svg class="octicon octicon-pencil" height="16" width="14" viewBox="0 0 14 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg></span></a>
-                </div>
+                <div class="col-xs-12">zuletzt geändert: <a href="//github.com/sillyslux/fluxbox-wiki/commits/69d68851ac4ed3655eeab15050e033226b6c2a8e/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/de.md">sillyslux</a> Dienstag, 25. April 2017 23:57<a href="/fluxbox-wiki/editor/"><span class="eZCKryaB57Sym_VEVFivV" style="margin:0 -15px 0 4px;"><svg class="octicon octicon-pencil" height="16" width="14" viewBox="0 0 14 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg></span></a></div>
             </div>
         </div>
         <div class="_3SLiHqGOHVbGK8BFZOY_3h footer">fluxbox-wiki.org<a style="float:right;" href="https://github.com/sillyslux/fluxbox-wiki/blob/master/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/de.md"><span class="eZCKryaB57Sym_VEVFivV"><svg class="octicon octicon-mark-github" height="16" width="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span></a></div>

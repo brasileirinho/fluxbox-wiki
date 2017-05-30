@@ -58,20 +58,17 @@
                             <div class="_3pvygEVL4fM0Ey_8sGPeKQ markdown-container">
                                 <div>
                                     <section>
-                                        <h1>
-                                            <a id="keyboard-shortcuts"></a><a class="permalink" href="#keyboard-shortcuts"><span class="glyphicon glyphicon-link"></span></a>Keyboard Shortcuts</h1>
+                                        <h1><a id="keyboard-shortcuts"></a><a class="permalink" href="#keyboard-shortcuts"><span class="glyphicon glyphicon-link"></span></a>Keyboard Shortcuts</h1>
                                         <p>The keyboard-shortcuts-file is defined in Fluxbox’s <a href="/fluxbox-wiki/en/wiki/Fluxbox/Init/">init-file</a>. By default ~/.fluxbox/keys is used, you can modify it to your liking or use a new empty file if you
                                             want. After editing the keys file, you need to tell fluxbox to reload the shortcut definitions by running the <a href="/fluxbox-wiki/en/wiki/Fluxbox-Commands/#reconfigure">fluxbox command</a> <code>reconfigure</code>.</p>
                                         <p>There’s also a dedicated <a href="/fluxbox-wiki/en/wiki/Fluxbox/#man-pages">man page</a> <code>fluxbox-keys</code></p>
                                         <section>
-                                            <h2>
-                                                <a id="special-keys"></a><a class="permalink" href="#special-keys"><span class="glyphicon glyphicon-link"></span></a>Special Keys</h2>
+                                            <h2><a id="special-keys"></a><a class="permalink" href="#special-keys"><span class="glyphicon glyphicon-link"></span></a>Special Keys</h2>
                                             <p>If you want to assign some special key that your keyboard has to offer, you can use <code>xev</code> to reveal it’s keycode and symname, then assign an action in your keys file.<br> The Examples Section below
                                                 shows use cases for <a href="#volume-control">XF86AudioLowerVolume</a>, <a href="#cycle-through-window-dimensions-and-positions">xf86Launch1</a>.</p>
                                         </section>
                                         <section>
-                                            <h2>
-                                                <a id="syntax-of-shortcut-definitions"></a><a class="permalink" href="#syntax-of-shortcut-definitions"><span class="glyphicon glyphicon-link"></span></a>Syntax of shortcut definitions</h2>
+                                            <h2><a id="syntax-of-shortcut-definitions"></a><a class="permalink" href="#syntax-of-shortcut-definitions"><span class="glyphicon glyphicon-link"></span></a>Syntax of shortcut definitions</h2>
                                             <p>Valid modifier key names are:</p>
                                             <ul>
                                                 <li>“Control” Control-Key (<code>ctrl</code> or <code>^</code>)</li>
@@ -83,18 +80,15 @@
                                             </ul>
                                         </section>
                                         <section>
-                                            <h2>
-                                                <a id="examples"></a><a class="permalink" href="#examples"><span class="glyphicon glyphicon-link"></span></a>Examples</h2>
+                                            <h2><a id="examples"></a><a class="permalink" href="#examples"><span class="glyphicon glyphicon-link"></span></a>Examples</h2>
                                             <section>
-                                                <h3>
-                                                    <a id="toggle-window-decorations"></a><a class="permalink" href="#toggle-window-decorations"><span class="glyphicon glyphicon-link"></span></a>Toggle Window Decorations</h3>
+                                                <h3><a id="toggle-window-decorations"></a><a class="permalink" href="#toggle-window-decorations"><span class="glyphicon glyphicon-link"></span></a>Toggle Window Decorations</h3>
                                                 <pre><code class="language-plain"># toggle window decorations <span class="hljs-keyword">with</span> Super+t
 Mod4 t   :ToggleDecor
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="volume-control"></a><a class="permalink" href="#volume-control"><span class="glyphicon glyphicon-link"></span></a>Volume-Control</h3>
+                                                <h3><a id="volume-control"></a><a class="permalink" href="#volume-control"><span class="glyphicon glyphicon-link"></span></a>Volume-Control</h3>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># change audio volume</span>
 None XF86AudioLowerVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%-
 None XF86AudioRaiseVolume   :Exec amixer sset <span class="hljs-literal">Master</span>,<span class="hljs-number">0</span> <span class="hljs-number">5</span>%+
@@ -102,8 +96,8 @@ None XF86AudioMute          :Exec amixer sset <span class="hljs-literal">Master<
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="cycle-through-window-dimensions-and-positions"></a><a class="permalink" href="#cycle-through-window-dimensions-and-positions"><span class="glyphicon glyphicon-link"></span></a>Cycle through Window Dimensions and Positions</h3>
+                                                <h3><a id="cycle-through-window-dimensions-and-positions"></a><a class="permalink" href="#cycle-through-window-dimensions-and-positions"><span class="glyphicon glyphicon-link"></span></a>Cycle through Window
+                                                    Dimensions and Positions</h3>
                                                 <p>Use some special key named <code>XF86Launch2</code> to cycle through various window sizes and positions. This will toggle between ⅓ and ⅔ sized windows in various positions, maximized horizontically for
                                                     head 1 and maximized vertically for head 2, on other heads it’ll just toggle between maximized and restored.</p>
                                                 <p class="alert alert-info">When creating somewhat more complicated commands, it may help to write over more lines and use indentations. When you’re done, you need to concatenate these lines because every configuration has to be on
@@ -197,16 +191,14 @@ Help :If </span><span class="hljs-template-variable">{Matches (HEAD=0)}</span><s
 </span></code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="run-any-system-command"></a><a class="permalink" href="#run-any-system-command"><span class="glyphicon glyphicon-link"></span></a>Run any system command</h3>
+                                                <h3><a id="run-any-system-command"></a><a class="permalink" href="#run-any-system-command"><span class="glyphicon glyphicon-link"></span></a>Run any system command</h3>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># use the eject key of a mac keyboard to toogle room lights on/off</span>
 169           :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a1 off"</span> |nc -w 2 192.168.0.10 1099
 Control 169   :ExecCommand <span class="hljs-built_in">echo</span> <span class="hljs-string">"pl a2 off"</span> |nc -w 2 192.168.0.10 1099
 </code></pre>
                                             </section>
                                             <section>
-                                                <h3>
-                                                    <a id="open-a-custom-fluxbox-menu"></a><a class="permalink" href="#open-a-custom-fluxbox-menu"><span class="glyphicon glyphicon-link"></span></a>Open a custom fluxbox menu</h3>
+                                                <h3><a id="open-a-custom-fluxbox-menu"></a><a class="permalink" href="#open-a-custom-fluxbox-menu"><span class="glyphicon glyphicon-link"></span></a>Open a custom fluxbox menu</h3>
                                                 <p>See also: the example for a <a href="/fluxbox-wiki/en/wiki/Fluxbox-Menus/#custom-exit-menu">custom exit menu</a>.</p>
                                                 <pre><code class="language-plain"><span class="hljs-comment"># use Windows-Key + Space to open an otherwise kind-of-hidden menu</span>
 Mod4 space   <span class="hljs-symbol">:CustomMenu</span> ~<span class="hljs-regexp">/.fluxbox/custom</span>-menu
@@ -255,9 +247,7 @@ Mod4 space   <span class="hljs-symbol">:CustomMenu</span> ~<span class="hljs-reg
                 </div>
             </div>
             <div class="_1S0OMxoLaHmh6v7M9JzTMk row">
-                <div class="col-xs-12">last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commits/2bf7287e64a7400cb5db2711f71ff4bad701a582/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/en.md">sillyslux</a> Sunday, May 7, 2017 12:52 AM
-                    <a href="/fluxbox-wiki/editor/"><span class="eZCKryaB57Sym_VEVFivV" style="margin:0 -15px 0 4px;"><svg class="octicon octicon-pencil" height="16" width="14" viewBox="0 0 14 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg></span></a>
-                </div>
+                <div class="col-xs-12">last modified: <a href="//github.com/sillyslux/fluxbox-wiki/commits/2bf7287e64a7400cb5db2711f71ff4bad701a582/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/en.md">sillyslux</a> Sunday, May 7, 2017 12:52 AM<a href="/fluxbox-wiki/editor/"><span class="eZCKryaB57Sym_VEVFivV" style="margin:0 -15px 0 4px;"><svg class="octicon octicon-pencil" height="16" width="14" viewBox="0 0 14 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg></span></a></div>
             </div>
         </div>
         <div class="_3SLiHqGOHVbGK8BFZOY_3h footer">fluxbox-wiki.org<a style="float:right;" href="https://github.com/sillyslux/fluxbox-wiki/blob/master/WikiPages/Mouse-and-Keyboard/Keyboard-Shortcuts/en.md"><span class="eZCKryaB57Sym_VEVFivV"><svg class="octicon octicon-mark-github" height="16" width="16" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span></a></div>
