@@ -54,3 +54,5 @@ See also [http://fluxbox-wiki.org/index.php?title=Update_fluxbox#Using_Ubuntu_an
 
 ### Mac
 * Mac OS X users: Get fink and execute:''' fink install fluxbox''' or '''sudo apt-get install fluxbox'''
+
+## just a test to see if thing still do what they should
